@@ -19,7 +19,6 @@ async def main():
         QueryVariant(text=q, score=await get_similarity_score(query, q, embedding_model))
         for q in response
     ]
-    print(scored_queries)
     distances, indices = index.search(embedding_model.encode([query]), k=10)
     print(f"Default query results ({len(indices[0])}): {[docs.texts[x] for x in indices[0]]}")
     optimized_results = set()
