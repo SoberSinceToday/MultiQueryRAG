@@ -94,6 +94,7 @@ retrieval и возвращать варианты с их scores.
 Спустя время эксплуатации latency упадет в силу кеширования openrouter
 
 ## Описание решения
+> ❗Перед использованием обязательно создайте ```.env``` файл в корневой директории проекта с OpenRouter ```API_KEY = ...```❗
 - ```app.py``` - FastAPI реализация генерации Multi Query, для каждого из вариантов считается ```score``` (Косинусное расстояние по отношению к основному запросу)
 - ```cli.py``` - Полная CLI реализация, вплоть до mock-retrieval
 - ```docs.py``` - Ingest + Indexing документов взятых из [IPCC](https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_Chapter16.pdf)
